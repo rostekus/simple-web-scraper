@@ -1,6 +1,5 @@
 env: "local"
 scraper:
-  timeout: 4s
   maxGo: 4
   minLen: 4
   maxLen: 10

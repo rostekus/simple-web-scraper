@@ -3,7 +3,6 @@ package config
 import (
 	"log"
 	"os"
-	"time"
 
 	"github.com/ilyakaznacheev/cleanenv"
 )
@@ -15,10 +14,9 @@ type Config struct {
 }
 
 type Scraper struct {
-	Timeout time.Duration `yaml:"timeout" env-default:"4s"`
-	MaxGo   uint          `yaml:"maxGo"`
-	MaxLen  int           `yaml:"maxLen" env-default:"10"`
-	MinLen  int           `yaml:"minLen" env-default:"1"`
+	MaxGo  uint `yaml:"maxGo"`
+	MaxLen int  `yaml:"maxLen" env-default:"10"`
+	MinLen int  `yaml:"minLen" env-default:"1"`
 }
 
 func MustLoad() *Config {
