@@ -8,6 +8,18 @@ This Go project is a simple web scraper that scrapes web content from web pages 
 - Analyzes the content to find the top 10 most frequently occurring words.
 - Saves the list of top 10 words to a file.
 
+
+#### The maximum number of goroutines to use for scraping concurrently
+
+In the code snippet above, boundChan is a channel used to control the maximum number of goroutines that can be used for scraping concurrently.
+
+```go
+// internal/controler/controller.go
+boundChan := make(chan struct{}, opts.MaxGo)
+c.boundChan <- struct{}{}
+go c.processUrl(url)
+```
+
 ## Getting Started
 
 To use this project, follow these steps:
@@ -34,3 +46,4 @@ scraper:
   maxGo: 4        # The maximum number of goroutines to use for scraping concurrently.
   minLen: 4       # The minimum word length to consider when analyzing web content.
   maxLen: 10      # The maximum word length to consider when analyzing web content.
+
