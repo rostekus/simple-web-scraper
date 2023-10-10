@@ -46,4 +46,17 @@ scraper:
   maxGo: 4        # The maximum number of goroutines to use for scraping concurrently.
   minLen: 4       # The minimum word length to consider when analyzing web content.
   maxLen: 10      # The maximum word length to consider when analyzing web content.
+```
 
+## Logs
+
+```bash
+time=2023-10-10T20:13:47.507+02:00 level=INFO msg="starting web scraper" env=local maxGo=4 "min word lenght"=4 "max word lenght"=10
+time=2023-10-10T20:13:47.507+02:00 level=DEBUG msg="debug messages are enabled"
+time=2023-10-10T20:13:47.507+02:00 level=INFO msg="processing url" url=https://en.wikipedia.org/wiki/C++23
+time=2023-10-10T20:13:47.507+02:00 level=INFO msg="skipping url" url=https://en.wikipedia.org/wiki/C++23
+time=2023-10-10T20:13:47.507+02:00 level=INFO msg="processing url" url=https://www.facebook.com/
+time=2023-10-10T20:13:48.004+02:00 level=INFO msg="saving file"
+time=2023-10-10T20:13:48.004+02:00 level=INFO msg="saved file" path=output.txt
+
+```
