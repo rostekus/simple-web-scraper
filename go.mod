@@ -2,7 +2,10 @@ module github.com/rostekus/simple-web-scraper
 
 go 1.21.1
 
-require github.com/ilyakaznacheev/cleanenv v1.5.0
+require (
+	github.com/ilyakaznacheev/cleanenv v1.5.0
+	golang.org/x/net v0.16.0
+)
 
 require (
 	github.com/BurntSushi/toml v1.2.1 // indirect
