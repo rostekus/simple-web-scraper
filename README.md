@@ -31,7 +31,6 @@ You can configure the behavior of the web scraper by editing the `config.yml` fi
 env: "local"
 
 scraper:
-  timeout: 4s     # The timeout for making HTTP requests to web pages (e.g., "4s" for 4 seconds).
   maxGo: 4        # The maximum number of goroutines to use for scraping concurrently.
   minLen: 4       # The minimum word length to consider when analyzing web content.
   maxLen: 10      # The maximum word length to consider when analyzing web content.
