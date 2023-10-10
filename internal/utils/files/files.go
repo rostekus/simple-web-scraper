@@ -2,6 +2,7 @@ package files
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 )
 
@@ -28,10 +29,11 @@ type UrlIterator struct {
 	scanner *bufio.Scanner
 }
 
-func (it *UrlIterator) Next() (string, bool) {
+func (it *UrlIterator) Next() (string, error) {
 	if it.scanner.Scan() {
-		return it.scanner.Text(), true
+		return it.scanner.Text(), nil
 	}
 	it.file.Close()
-	return "", false
+	return "", fmt.Errorf("the end of file")
+
 }
