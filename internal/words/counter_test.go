@@ -1,6 +1,5 @@
 package words
 
-
 import (
 	"testing"
 )
@@ -13,7 +12,7 @@ func TestMostCommonFreqWordsCounter(t *testing.T) {
 		{"C++", 3},
 		{"Python", 2},
 		{"Java", 4},
-		{"Go", 10}, 
+		{"Go", 10},
 	}
 
 	for _, word := range words {
