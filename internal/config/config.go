@@ -17,8 +17,8 @@ type Config struct {
 type Scraper struct {
 	Timeout time.Duration `yaml:"timeout" env-default:"4s"`
 	MaxGo   uint          `yaml:"maxGo"`
-	MaxLen  uint          `yaml:"maxLen" env-default:"10"`
-	MinLen  uint          `yaml:"minLen" env-default:"1"`
+	MaxLen  int           `yaml:"maxLen" env-default:"10"`
+	MinLen  int           `yaml:"minLen" env-default:"1"`
 }
 
 func MustLoad() *Config {
