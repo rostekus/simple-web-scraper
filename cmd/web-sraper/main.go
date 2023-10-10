@@ -53,6 +53,8 @@ func main() {
 		UrlIter:     urlIter,
 		Log:         log,
 		Scraper:     scraper,
+		MinWordLen:  cfg.MinLen,
+		MaxWordLen:  cfg.MaxLen,
 	}
 
 	c := controller.NewController(&opts)

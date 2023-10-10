@@ -29,6 +29,8 @@ type ControllerOpts struct {
 	Log         *slog.Logger
 	MaxGo       int
 	Scraper     Scraper
+	MinWordLen  int
+	MaxWordLen  int
 }
 
 type Controller struct {
@@ -103,6 +105,11 @@ func (c *Controller) processUrl(url string) {
 	}
 	c.Cache.Set(url, freqMap)
 	for word, freq := range freqMap {
+		wordLen := len(word)
+		if !(wordLen >= c.MinWordLen && wordLen <= c.MaxWordLen) {
+			// if word is in bounderies -> continue
+			continue
+		}
 		wF := words.WordFreq{
 			Word: word,
 			Freq: freq,
