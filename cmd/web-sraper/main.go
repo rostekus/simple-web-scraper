@@ -71,6 +71,7 @@ func main() {
 	log.Info("saving file")
 	if err := words.SaveWordFreqsToFile(result, outputFilePath); err != nil {
 		log.Error("problem with saving file", sl.Err(err))
+		return
 	}
 	log.Info("saved file", slog.String("path", outputFilePath))
 }
